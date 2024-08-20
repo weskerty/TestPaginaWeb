@@ -1,10 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux One Clic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="web/favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comfortaa', sans-serif;
+            background: url('https://img.goodfon.com/original/1360x768/4/a2/tekstury-razmytie-siniy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        a {
+            color: lightblue; 
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-left: 5px solid #ccc;
+            color: white;
+        }
+        code {
+            font-family: monospace;
+            padding: 2px 4px;
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-left: 5px solid #ccc;
+            color: white;
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, p {
+            color: white;
+        }
+    </style>
+</head>
 <body>
     <div class="content" id="content">
-    </div>
-
-    <!-- Contenedor de comentarios -->
-    <div id="comments" class="content">
-        <div id="disqus_thread"></div>
     </div>
 
     <script>
@@ -29,21 +73,23 @@
                 document.getElementById('content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
             }
         });
+    </script>
 
-        // Configuración de Disqus
+    <!-- Disqus comment section -->
+    <div id="disqus_thread"></div>
+    <script>
         var disqus_config = function () {
-            this.page.url = window.location.href;  
-            this.page.identifier = document.title; 
+            this.page.url = window.location.href;  // URL actual de la página
+            this.page.identifier = document.title; // Identificador de la página
         };
 
-        (function() {  
+        (function() {  // Cargar el script de Disqus
             var d = document, s = d.createElement('script');
-            s.src = 'https://linuxoneclic.disqus.com/embed.js';  // Aquí usas tu ID de Disqus
+            s.src = 'https://linuxoneclic.disqus.com/embed.js';  // Aquí está tu ID de Disqus
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
     </script>
-
-    <!-- Este script es opcional para contar comentarios -->
-    <script id="dsq-count-scr" src="//linuxoneclic.disqus.com/count.js" async></script>
+    <noscript>Por favor, habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios de Disqus.</a></noscript>
 </body>
+</html>
