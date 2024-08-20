@@ -26,11 +26,14 @@
         h1, p {
             color: white;
         }
-    </style>
-    <script type="module">
-        import marked from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
 
-        document.addEventListener("DOMContentLoaded", async function() {
+        zero-md {
+            display: block;
+        }
+    </style>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2.3.0/dist/zero-md.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
             const userLang = navigator.language || navigator.userLanguage;
             let readmeFile = 'README.md'; 
 
@@ -40,23 +43,13 @@
                 readmeFile = 'README.pt-br.md'; 
             }
 
-            try {
-                const response = await fetch(readmeFile);
-                if (!response.ok) throw new Error(`Error fetching ${readmeFile}: ${response.statusText}`);
-                const markdownText = await response.text();
-                const htmlContent = marked(markdownText);
-
-                document.querySelector('.content').innerHTML = htmlContent;
-            } catch (error) {
-                console.error(error);
-                document.querySelector('.content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
-            }
+            document.querySelector('zero-md').setAttribute('src', readmeFile);
         });
     </script>
 </head>
 <body>
     <div class="content">
-        <!-- El contenido Markdown se inyectará aquí -->
+        <zero-md src="README.md"></zero-md>
     </div>
 </body>
 </html>
