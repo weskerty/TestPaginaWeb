@@ -16,7 +16,7 @@
             color: white;
         }
         a {
-            color: lightblue;
+            color: lightblue; 
         }
         blockquote {
             margin: 20px 0;
@@ -41,17 +41,15 @@
             margin: 50px auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         h1, p {
             color: white;
-        }
-        /* Asegurar tema oscuro en Disqus */
-        #disqus_thread {
-            color: #ffffff;
         }
     </style>
 </head>
 <body>
-    <div class="content" id="content"></div>
+    <div class="content" id="content">
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", async function() {
@@ -59,9 +57,9 @@
             let htmlFile = 'web/ingles.html';
 
             if (userLang.startsWith('es')) {
-                htmlFile = 'web/es.html';
+                htmlFile = 'web/es.html'; 
             } else if (userLang.startsWith('pt')) {
-                htmlFile = 'web/pt.html';
+                htmlFile = 'web/pt.html'; 
             }
 
             try {
