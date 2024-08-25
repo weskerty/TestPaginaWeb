@@ -74,22 +74,21 @@
             }
         });
     </script>
-
-    <!-- Disqus comment section -->
+	
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
-            this.page.url = window.location.href;  // URL actual de la página
-            this.page.identifier = document.title; // Identificador de la página
+            this.page.url = window.location.href; 
+            this.page.identifier = document.title;
         };
 
-        (function() {  // Cargar el script de Disqus
+        (function() {  
             var d = document, s = d.createElement('script');
-            s.src = 'https://linuxoneclic.disqus.com/embed.js';  // Aquí está tu ID de Disqus
+            s.src = 'https://linuxoneclic.disqus.com/embed.js'; 
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
     </script>
-    <noscript>Por favor, habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios de Disqus.</a></noscript>
+    <noscript> JavaScript OFF <a href="https://disqus.com/?ref_noscript"></a></noscript>
 </body>
 </html>
