@@ -75,20 +75,29 @@
         });
     </script>
 	
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-            this.page.url = window.location.href; 
-            this.page.identifier = document.title;
-        };
+	<!-- Comentarios de Disqus-->
+    <!-- <div id="disqus_thread"></div> -->
+    <!-- <script> -->
+        <!-- var disqus_config = function () { -->
+            <!-- this.page.url = window.location.href;  -->
+            <!-- this.page.identifier = document.title; -->
+        <!-- }; -->
 
-        (function() {  
-            var d = document, s = d.createElement('script');
-            s.src = 'https://linuxoneclic.disqus.com/embed.js'; 
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript> JavaScript OFF <a href="https://disqus.com/?ref_noscript"></a></noscript>
+        <!-- (function() {   -->
+            <!-- var d = document, s = d.createElement('script'); -->
+            <!-- s.src = 'https://linuxoneclic.disqus.com/embed.js';  -->
+            <!-- s.setAttribute('data-timestamp', +new Date()); -->
+            <!-- (d.head || d.body).appendChild(s); -->
+        <!-- })(); -->
+    <!-- </script> -->
+	
+	<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '1278571215635877908', // Basu
+        channel: '1278571216260567093' // #filosofia
+    })
+</script>
+	
+    <noscript> JavaScript OFF. Need ON </noscript>
 </body>
 </html>
