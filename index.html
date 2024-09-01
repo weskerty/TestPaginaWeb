@@ -68,13 +68,33 @@
                 const htmlContent = await response.text();
                 
                 document.getElementById('content').innerHTML = htmlContent;
+
+                // Add click event listener for links
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', async function(e) {
+                        const href = this.getAttribute('href');
+                        if (!href.startsWith('http')) { // Internal link
+                            e.preventDefault();
+                            try {
+                                const response = await fetch(href);
+                                if (!response.ok) throw new Error(`Error fetching ${href}: ${response.statusText}`);
+                                const htmlContent = await response.text();
+                                document.getElementById('content').innerHTML = htmlContent;
+                            } catch (error) {
+                                console.error(error);
+                                document.getElementById('content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
+                            }
+                        }
+                    });
+                });
+
             } catch (error) {
                 console.error(error);
                 document.getElementById('content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
             }
         });
     </script>
-	
+    
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
