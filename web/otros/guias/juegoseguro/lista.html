@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Comentarios</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="web/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
             margin: 0;
@@ -39,7 +39,6 @@
             padding: 2px 4px;
             border-radius: 4px;
             background-color: rgba(0, 0, 0, 0.7);
-            border-left: 5px solid #ccc;
             color: white;
         }
         .content {
@@ -52,7 +51,6 @@
             position: relative;
             z-index: 1;
         }
-
         h1, p {
             color: white;
         }
@@ -60,14 +58,16 @@
 </head>
 <body>
     <video autoplay muted loop id="bg-video">
-        <source src="https://github.com/user-attachments/assets/b6472e23-966d-4310-9930-64090cbddb2d" type="video/mp4">
+        <source src="https://github.com/user-attachments/assets/39c5fcc7-fab9-448b-9da6-e94c07986fb2" type="video/mp4">
         Tu navegador no soporta el elemento de video.
     </video>
 
     <div class="content" id="content">
     </div>
 
-	 	<!-- Comentarios de Disqus-->
+
+
+    <!-- Comentarios de Disqus-->
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
@@ -83,13 +83,13 @@
         })();
     </script>
   
-<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-    new Crate({
-        server: '1278571215635877908', // Basu
-        channel: '1280976262504124508' // #basurero-sexta-feira
-    })
-</script>
+    <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+        new Crate({
+            server: '1278571215635877908', // Basu
+            channel: '1280976262504124508' // #basurero-sexta-feira
+        })
+    </script>
 
-    <noscript> JavaScript OFF.</noscript>
+    <noscript>JavaScript OFF. Need ON.</noscript>
 </body>
 </html>
