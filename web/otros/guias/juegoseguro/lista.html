@@ -67,30 +67,6 @@
     <div class="content" id="content">
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", async function() {
-            const userLang = navigator.language || navigator.userLanguage;
-            let htmlFile = 'web/ingles.html';
-
-            if (userLang.startsWith('es')) {
-                htmlFile = 'web/es.html'; 
-            } else if (userLang.startsWith('pt')) {
-                htmlFile = 'web/pt.html'; 
-            }
-
-            try {
-                const response = await fetch(htmlFile);
-                if (!response.ok) throw new Error(`Error fetching ${htmlFile}: ${response.statusText}`);
-                const htmlContent = await response.text();
-                
-                document.getElementById('content').innerHTML = htmlContent;
-            } catch (error) {
-                console.error(error);
-                document.getElementById('content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
-            }
-        });
-    </script>
-
 	 	<!-- Comentarios de Disqus-->
     <div id="disqus_thread"></div>
     <script>
