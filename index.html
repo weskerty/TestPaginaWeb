@@ -56,6 +56,10 @@
         h1, p {
             color: white;
         }
+        
+        #disqus_thread {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -84,19 +88,35 @@
                 const htmlContent = await response.text();
                 
                 document.getElementById('content').innerHTML = htmlContent;
+
+                const disqusDiv = document.createElement('div');
+                disqusDiv.id = 'disqus_thread';
+                document.getElementById('content').appendChild(disqusDiv);
+
+                var disqus_config = function () {
+                    this.page.url = window.location.href; 
+                    this.page.identifier = document.title;
+                };
+              
+                (function() {  
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://amigos-steam.disqus.com/embed.js'; 
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
             } catch (error) {
                 console.error(error);
                 document.getElementById('content').innerHTML = `<p>Error loading content: ${error.message}</p>`;
             }
         });
     </script>
-    
-<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-    new Crate({
-        server: '1278571215635877908', // Basu
-        channel: '1280976262504124508' // #basurero-sexta-feira
-    })
-</script>
+
+    <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+        new Crate({
+            server: '1278571215635877908', // Basu
+            channel: '1280976262504124508' // #basurero-sexta-feira
+        })
+    </script>
 
     <noscript> JavaScript OFF.</noscript>
 </body>
